@@ -1,9 +1,50 @@
 # Dudas
 * Ejercicio 2: El ID al hacer el pull pense era el ID de la imagen, pero despues veo que el ID de la imagen es bf756fb1ae65 con docker image ls, cual es la diferencia?)
+
+**Respuesta**
+
+<pre>
+Cuando hacés git pull de cualquier imagen puede confundir un poco la salida:
+
+docker pull debian
+Using default tag: latest
+latest: Pulling from library/debian
+e4c3d3e4f7b0: Pull complete 
+Digest: sha256:8414aa82208bc4c2761dc149df67e25c6b8a9380e5d8c4e7b5c84ca2d04bb244
+Status: Downloaded newer image for debian:latest
+docker.io/library/debian:latest
+En ese ejemplo, podés ver que aparecen dos cosas: e4c3d3e4f7b0 y 
+8414aa82208bc4c2761dc149df67e25c6b8a9380e5d8c4e7b5c84ca2d04bb244
+. Si mirás docker image ls --digest vas a encontrar el hash(digest) de la imagen descargada. El otro valor es el has de la capa que descarga desde docker hub.
+</pre>
+
 * Ejercicio 10: Al matar y volver a crear un container desde la imagen no arranca automaticamente el Apache2. Tampoco entiendo porque deberia hacerlo
+
+**Respuesta**
+
+<pre>
+La idea de este ejercicio es que usen commit. Está bien que no entiendas por qué no corre apache automáticamente. Eso lo veremos en la clase de hoy. Entonces siguiendo la idea del ejercicio, en la consola podés correr:
+
+docker run --name alpine-apache  alpine apk add -U apache2
+docker commit alpine-apache alpine-apache
+docker rm -f alpine-apache && docker run -d --rm -p 80:80 alpine-apache httpd -D FOREGROUND
+curl localhost
+</pre>
+
 * Ejercicio 11: No se si esa era la idea...
+**Respuesta**
+
+<pre>
+Sí, y verificar que si accedes al nginx veas entonces German
+</pre>
+
 * Ejercicio 12: Sinceramente no entendi la pregunta
 
+**Respuesta**
+
+<pre>
+La idea es responder y verificar lo que aun no vimos y lo que hoy arrancaremos viendo.
+</pre>
 
 # Ejercicio 1 
 
@@ -20,7 +61,7 @@ library/hello-world:latest
 <pre>
 Unable to find image 'hello-world:latest' locally -> No encontre la imagen localmente
 latest: Pulling from library/hello-world -> Voy a buscarla a la registry
-0e03bdcc26d7: Pull complete  -> Listo, la encontre y la baje (DUDA: encuentro este ID que crei era el ID de la imagen, pero despues veo que el ID de la imagen es bf756fb1ae65 con docker image ls, cual es la diferencia)
+0e03bdcc26d7: Pull complete  -> Listo, la encontre y la baje (**DUDA: encuentro este ID que crei era el ID de la imagen, pero despues veo que el ID de la imagen es bf756fb1ae65 con docker image ls, cual es la diferencia**)
 Digest: sha256:8c5aeeb6a5f3ba4883347d3747a7249f491766ca1caa47e5da5dfcf6b9b717c0 -> El digest d ela imagen bajada
 Status: Downloaded newer image for hello-world:latest -> Cargo la imagen
 
@@ -412,7 +453,7 @@ node                     10.15-alpine        56bc3a1ed035        17 months ago  
 
 </pre>
 
-**Lo que noto cuando lo mato y lo levanto de la imagen que cree es que apache no esta escuchando...**
+**Lo que noto cuando lo mato y lo levanto de la imagen que cree es que apache no esta escuchando...** (Ver Respuesta)
 
 # Ejercicio 11
 
@@ -429,4 +470,4 @@ eb2f050199ef        nginx:latest        "/docker-entrypoint.…"   2 seconds ago
 
 # Ejercicio 12
 
-**TODO**
+**TODO** (Ver respuesta)
