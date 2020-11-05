@@ -7,7 +7,7 @@ Según [Github](https://madnight.github.io/githut/#/pull_requests/2020/3) son:
 3. Java
 4. Go
 
-Segun [JetBrains](https://www.jetbrains.com/lp/devecosystem-2020/) son:
+Según [JetBrains](https://www.jetbrains.com/lp/devecosystem-2020/) son:
 1. Java (El mas popular como lenguaje principal)
 2. JavaScript (El mas usado)
 3. Go, Kotlin, python (Los 3 top que se planea utilizar)
@@ -44,9 +44,9 @@ Luego hay otras guias, propias, como:
 2. [Java Oficial](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html)
 3. [Python Oficial](https://www.python.org/dev/peps/pep-0008/)
 
-## Conclusiones
-He trabajado en algun proyecto que mantenia un estandard de desarrollo, que inclusive lo integrabamos con la IDE y con checkeos en contruccion continua de respeto del estandard. Lo que realmente complico las cosas fue cuando los equipos se fueron renovando y no se mantuvo el espiritu en el grupo.
-A mi criterio, mantener un estandar es fundamental, no solo es una cuestion de prolijidad, sino que ayuda muchisimo a entener el codigo que escribio otro miembro del equipo y asi solucionarlo.
+## Conclusión
+He trabajado en algún proyecto que mantenía un estándar de desarrollo, que inclusive lo integrábamos con la IDE y con chequeos en construcción continua de respeto del estándar. Lo que realmente complico las cosas fue cuando los equipos se fueron renovando y no se mantuvo el espíritu en el grupo.
+A mi criterio, mantener un estándar es fundamental, no solo es una cuestión de prolijidad, sino que ayuda muchísimo a entender el código que escribió otro miembro del equipo y así solucionarlo.
 
 # Schema migrations
 
@@ -58,6 +58,6 @@ A mi criterio, mantener un estandar es fundamental, no solo es una cuestion de p
 2. Python
    - Dentro de Django existe [Migration](https://docs.djangoproject.com/en/3.1/topics/migrations/)
 
-## Conclusion
-Por la dinamica en la organizacion, no se utiliza herramientas de versionado de base. Sino, que se utilizar componentes que se suben en nexus, que tienen un standart para su armado y estructurado (En carpetas y nombres de archivos). Si, no existe estandar para rollback. Los scripts son ejecutados manualmente por un administrador de base de datos. 
+## Conclusión
+Por la dinámica en la organización, no se utiliza herramientas de versionado de base. Sino, que se utilizar componentes que se suben en nexus, que tienen un estándar para su armado y estructurado (En carpetas y nombres de archivos). Si, no existe estándar para rollback. Los scripts son ejecutados manualmente por un administrador de base de datos. 
 Si use alguna vez y a modo de prueba y juego el que viene con Ruby on rails y uno que venia en Tapestry 4.

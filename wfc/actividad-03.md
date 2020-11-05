@@ -33,5 +33,5 @@ Uploading artifacts for successful job
 ....
 </pre>
 
-PD: Entre no, muy bueno!!!!!!!
+PD: Entre nos, muy bueno!!!!!!!
 
