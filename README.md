@@ -7,4 +7,4 @@
  * [Actividad 4](wfc/actividad-04.md)
 
 # DOCKER
- * [Actividad 1](docker/actividad-01.md)
+ * [Actividad 1](docker/actividad-01.md) **CORREGIDO**
