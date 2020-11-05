@@ -33,13 +33,13 @@ Dentro de Frameworks tenemos (Aunque super discutible)
 
 # Estandares de codificacion
 
-En lineas generales, algunos lenguajes tienen o respetan mas de un estandar. Por ejemplo, Google tiene [una guia](https://google.github.io/styleguide/) publicada para varios lenguajes, que es muy buena
+En lineas generales, algunos lenguajes tienen o respetan mas de un estándar. Por ejemplo, Google tiene [una guía](https://google.github.io/styleguide/) publicada para varios lenguajes, que es muy buena
 
 1. [Java](https://google.github.io/styleguide/javaguide.html)
 2. [Python](https://google.github.io/styleguide/pyguide.html)
 3. [Javascript](https://google.github.io/styleguide/jsguide.html)
 
-Luego hay otras guias, propias, como:
+Luego hay otras guías, propias, como:
 1. [Kotlin Oficial](https://kotlinlang.org/docs/reference/code-style-migration-guide.html)
 2. [Java Oficial](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html)
 3. [Python Oficial](https://www.python.org/dev/peps/pep-0008/)
