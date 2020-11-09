@@ -189,13 +189,15 @@ local               23bdcd982f55469ce2b07d0cc9b3e04f981bca46a2f6147c829b382d7f10
 local               2485c75b57919541980359b80c05230a7936ca5cbc18cff50108c3866a8fedce
 </pre>
 
-Y justamente hay un volumen mas, por ende, en el volumen anonimmo nuevo, no va a estar el archivo
+Y justamente hay un volumen mas, por ende, en el volumen anonimmo nuevo, no va a estar el archivo, sino el nuevo que cree. 
 
 <pre>
 ➜  volumes git:(main) ✗ docker run --rm -it -v /:/vm-root alpine:edge ls -l /vm-root$(docker inspect $(docker ps -alq) --format '{{range .Mounts}}{{ .Name }}{{end}}' | xargs docker volume inspect --format '{{ .Mountpoint }}')
 total 0
 -rw-r--r--    1 root     root             0 Nov  9 14:19 file2
 </pre>
+
+**Nota**: El comando anterior es un poco diferente porque estoy corriendo en una MAC y trabaja un poco diferente docker (Docker trabaja dentro de una VM). Puse el detalle en el Ejercicio 1, ya que ahi se me presento el problema. 
 
 ## Ejercicio 3
 
