@@ -8,3 +8,4 @@
 
 ## DOCKER
  * [Actividad 1](docker/actividad-01.md) **CORREGIDO**
+ * [Actividad 2](docker/actividad-02.md)
