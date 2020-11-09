@@ -1,18 +1,20 @@
 # Respuestas solitidadas
 
-[Volumenes, ejercicio 2](#Volumenes_Ejercicio-2)
+[Volumenes, ejercicio 2](#Ejercicio-2)
 
 [Volumenes, ejercicio 3](#Ejercicio-3)
 
-[Volumenes, ejercicio 9](#Ejercicio-4)
+[Volumenes, ejercicio 9](#Ejercicio-9)
 
 # Registry
 
-## Ejercicio 1
+## Parte 1
 
 <pre>
 docker run -d -p 5000:5000 --restart always --name registry registry:2
 </pre>
+
+## Parte 2
 
 [Dockerfile](actividad-03/registry/Dockerfile.1)
 
@@ -56,7 +58,7 @@ d0fe97fa8b8c: Pushed
 latest: digest: sha256:e381b53960765bc5d6414e0cd94b4ee34196cd65a2dde9e8be753b49a7bc4a00 size: 1569
 </pre>
 
-## Ejercicio 3
+## Parte 3
 
 Resultado
 
@@ -290,4 +292,5 @@ drwxr-xr-x    1 root     root          4096 Nov  9 14:33 ..
 </pre>
 
 ## Ejercicio 7
+
 
