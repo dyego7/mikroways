@@ -270,13 +270,13 @@ Es con "--network none", por ejemplo
 <pre>
 ➜  actividad-04 git:(main) ✗ docker run -it --rm --name dos-user -e VAR=dos --network none alpine    
 / # ip add ls
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-2: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN qlen 1000
+2: tunl0@NONE: &lt;NOARP&gt; mtu 1480 qdisc noop state DOWN qlen 1000
     link/ipip 0.0.0.0 brd 0.0.0.0
-3: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN qlen 1000
+3: ip6tnl0@NONE: &lt;NOARP&gt; mtu 1452 qdisc noop state DOWN qlen 1000
     link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 </pre>
 
