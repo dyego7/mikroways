@@ -1,4 +1,4 @@
-# Respuestas solitidadas
+# Respuestas Solicitadas
 
 [Volumenes, ejercicio 2](#ejercicio-2)
 
