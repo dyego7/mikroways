@@ -38,7 +38,7 @@ b5c20b2b484f: Pull complete
 Digest: sha256:aeade65e99e5d5e7ce162833636f692354c227ff438556e5f3ed0335b7cc2f1b
 Status: Downloaded newer image for nginx:latest
  ---> c39a868aad02
-Step 2/2 : RUN echo "<html><body><b>¡ index cambiado !</b></body></html" > /usr/share/nginx/html/index.html
+Step 2/2 : RUN echo "<html><body><b>¡ index cambiado !</b></body></html>" > /usr/share/nginx/html/index.html
  ---> Running in 14bf30ffb807
 Removing intermediate container 14bf30ffb807
  ---> 0b5dc7f8d2a9
