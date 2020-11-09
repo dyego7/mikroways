@@ -1,0 +1,3 @@
+FROM busybox AS PRE
+ADD . /app
+RUN chmod 400 /app/*

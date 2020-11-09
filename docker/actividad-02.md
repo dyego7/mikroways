@@ -322,6 +322,31 @@ gdelacruz/files     latest              33817fc10863        3 seconds ago       
 busybox             latest              f0b02e9d092d        3 weeks ago         1.23MB
 </pre>
 
+PD: Hay discuciones intesesantes del [soporte del --chmod en el ADD/COPY](https://github.com/moby/moby/issues/34819) o el parametro --squash, que esta en experimental.
+
+Activando las experimental, la imagen igual que con el multistage (Desactivandolo claro)
+
+[Dockerfile](actividad-02/Dockerfile.9.squash)
+
+<pre>
+➜  actividad-02 git:(main) docker build --squash -t gdelacruz/files  -f Dockerfile.9.squash .
+Sending build context to Docker daemon  9.216kB
+Step 1/3 : FROM busybox AS PRE
+ ---> f0b02e9d092d
+Step 2/3 : ADD . /app
+ ---> e4aaddd9b2c4
+Step 3/3 : RUN chmod 400 /app/*
+ ---> Running in cd408fe23a03
+Removing intermediate container cd408fe23a03
+ ---> f05f48d40460
+Successfully built 4cbde573fc88
+Successfully tagged gdelacruz/files:latest
+
+➜  actividad-02 git:(main) ✗ docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+gdelacruz/files     latest              0bec381a0395        5 seconds ago       3.23MB
+</pre>
+
 # Ejercicio 10
 Segun la [documentacion de docker](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
