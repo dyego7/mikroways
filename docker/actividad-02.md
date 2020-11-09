@@ -7,17 +7,17 @@ En el ejercicio 4 se me ocurrio hacer un comando, porque no sabia como insertar 
 
 # Ejercicio 1
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.1)
 
 <pre>
 FROM httpd:2.4
-RUN echo "<html><body><b>¡ Hola Mundo !</b></body></html>" > /usr/local/apache2/htdocs/index.html 
+RUN echo "&lt;html&gt;&lt;body&gt;&lt;b&gt;¡ Hola Mundo !&lt;/b&gt;&lt;/body&gt;&lt;/html&gt;" > /usr/local/apache2/htdocs/index.html 
 </pre>
 
 Resultado
 
 <pre>
-➜  actividad-02 docker build -t mikroways/hola-mundo-httpd -f DockerFile.1 .
+➜  actividad-02 docker build -t mikroways/hola-mundo-httpd -f Dockerfile.1 .
 Sending build context to Docker daemon  2.048kB
 ...
 Successfully tagged mikroways/hola-mundo-httpd:latest
@@ -31,7 +31,7 @@ docker run -d -p 8080:80 --name hola-mundo-httpd mikroways/hola-mundo-httpd
 6d08b44c2b416cbd6db312c4414b29e91749c4c75595e552880b3de744d2da92
 
 ➜  actividad-02 curl localhost:8080
-<html><body><b>¡ Hola Mundo !</b></body></html>
+&lt;html&gt;&lt;body&gt;&lt;b&gt;¡ Hola Mundo !&lt;/b&gt;&lt;/body&gt;&lt;/html&gt;
 
 ➜  actividad-02 docker stop hola-mundo-httpd 
 hola-mundo-httpd
@@ -56,7 +56,7 @@ denied: requested access to the resource is denied
 No soy dueño de mikroways!!!, creo la imagen con otro domain
 
 <pre>
-➜  actividad-02 docker build -t gdelacruz/hola-mundo-httpd -f DockerFile.1 .  
+➜  actividad-02 docker build -t gdelacruz/hola-mundo-httpd -f Dockerfile.1 .  
 Sending build context to Docker daemon  2.048kB
 ..
 Successfully tagged gdelacruz/hola-mundo-httpd:latest
@@ -74,7 +74,7 @@ Gilab
 ..
 Login Succeeded
 
-➜  actividad-02 docker build -t registry.gitlab.com/gdelacruz/docker-registry -f DockerFile.1 . 
+➜  actividad-02 docker build -t registry.gitlab.com/gdelacruz/docker-registry -f Dockerfile.1 . 
 Sending build context to Docker daemon  2.048kB
 ...
 latest: digest: sha256:f14029597f28d20ff3621fb2447322558acfde6fde0cb4e74aae73b1635a080c size: 1573
@@ -82,7 +82,7 @@ latest: digest: sha256:f14029597f28d20ff3621fb2447322558acfde6fde0cb4e74aae73b16
 
 # Ejercicio 3
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.3)
 
 <pre>
 FROM busybox
@@ -93,7 +93,7 @@ CMD ["HOLA MUNDO"]
 Resultado
 
 <pre>
-➜  actividad-02 docker build -t gdelacruz/echo -f DockerFile.3 .
+➜  actividad-02 docker build -t gdelacruz/echo -f Dockerfile.3 .
 Sending build context to Docker daemon  4.096kB
 ...
 Successfully tagged gdelacruz/echo:latest
@@ -107,7 +107,7 @@ Hola German
 
 # Ejercicio 4
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.4)
 
 <pre>
 FROM alpine:latest
@@ -118,7 +118,7 @@ ENTRYPOINT ["/bin/run.sh"]
 CMD ["10M"]
 </pre>
 
-run.sh
+[run.sh](actividad-02/run.sh)
 
 <pre>
 #!/bin/sh
@@ -128,7 +128,7 @@ dd if=/dev/zero bs=$1 count=1 of=created-file
 Resultado
 
 <pre>
-➜  actividad-02 docker build -t gdelacruz/file-creator -f DockerFile.4 .
+➜  actividad-02 docker build -t gdelacruz/file-creator -f Dockerfile.4 .
 Sending build context to Docker daemon  7.168kB
 ...
 Successfully tagged gdelacruz/file-creator:latest
@@ -152,7 +152,7 @@ Cuando lo ejecute con "10M" la imagen peso 10M mas, y cuando lo ejecute con "100
 
 # Ejercicio 5
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.5)
 
 <pre>
 FROM alpine:latest
@@ -170,7 +170,7 @@ CMD ["10M"]
 Resultado
 
 <pre>
-➜  actividad-02 docker build -t gdelacruz/file-creator-nonroot -f DockerFile.5 .
+➜  actividad-02 docker build -t gdelacruz/file-creator-nonroot -f Dockerfile.5 .
 Sending build context to Docker daemon  6.144kB
 ...
 Successfully tagged gdelacruz/file-creator-nonroot:latest
@@ -196,7 +196,7 @@ drwxr-xr-x    1 root     root          4096 Nov  9 00:45 ..
 
 # Ejercicio 6 
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.6)
 
 <pre>
 FROM ruby:2.7 AS ARTIFACT
@@ -212,7 +212,7 @@ COPY --from=ARTIFACT /tmp/site/_site/  /usr/share/nginx/html
 Resultado
 
 <pre>
-➜  actividad-02 docker build -t gdelacruz/site -f DockerFile.6 .
+➜  actividad-02 docker build -t gdelacruz/site -f Dockerfile.6 .
 Sending build context to Docker daemon  7.168kB
 Step 1/7 : FROM ruby:2.7 AS ARTIFACT
 2.7: Pulling from library/ruby
@@ -239,7 +239,7 @@ Accept-Ranges: bytes
 
 # Ejercicio 7
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.7)
 
 <pre>
 FROM node:current-buster AS ARTIFACT
@@ -257,7 +257,7 @@ COPY --from=ARTIFACT /tmp/site/public/  /usr/share/nginx/html
 Resultado
 
 <pre>
-➜  actividad-02 docker build -t gdelacruz/site -f DockerFile.7 .
+➜  actividad-02 docker build -t gdelacruz/site -f Dockerfile.7 .
 Sending build context to Docker daemon  8.192kB
 ...
 Done! Find your new .html resume at:
@@ -297,7 +297,7 @@ busybox             latest              f0b02e9d092d        3 weeks ago         
 
 Como la capa "RUN chmod 400 /app/*" modifica los archivos de la capa "ADD . /app", entonces duplica el espacio. Se me ocurrio una solucion con multistage
 
-Dockerfile
+[Dockerfile](actividad-02/Dockerfile.9)
 
 <pre>
 FROM busybox AS PRE

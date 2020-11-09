@@ -1,0 +1,10 @@
+FROM node:current-buster AS ARTIFACT
+
+WORKDIR /tmp/site
+RUN git clone https://gitlab.com/gdelacruz/myresume.git /tmp/site
+RUN npm i
+RUN mkdir -p public/
+RUN npm run resume export -- --theme elegant public/index.html
+
+FROM nginx:alpine
+COPY --from=ARTIFACT /tmp/site/public/  /usr/share/nginx/html

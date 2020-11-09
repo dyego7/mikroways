@@ -1,0 +1,11 @@
+FROM alpine:latest
+
+WORKDIR /tmp
+
+ADD ./run.sh /bin/
+
+RUN chmod +x /bin/run.sh
+
+ENTRYPOINT ["/bin/run.sh"]
+
+CMD ["10M"]

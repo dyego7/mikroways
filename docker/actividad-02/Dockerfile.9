@@ -1,0 +1,6 @@
+FROM busybox AS PRE
+ADD . /app
+RUN chmod 400 /app/*
+
+FROM busybox
+COPY --from=PRE /app /app

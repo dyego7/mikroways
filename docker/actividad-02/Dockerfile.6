@@ -1,0 +1,8 @@
+FROM ruby:2.7 AS ARTIFACT
+WORKDIR /tmp/site
+RUN git clone https://github.com/Mikroways/mikroways.net.git /tmp/site
+RUN bundle install
+RUN jekyll build
+
+FROM nginx:alpine
+COPY --from=ARTIFACT /tmp/site/_site/  /usr/share/nginx/html
