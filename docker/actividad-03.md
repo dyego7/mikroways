@@ -1,10 +1,10 @@
 # Respuestas solitidadas
 
-[Volumenes, ejercicio 2](#Ejercicio-2)
+[Volumenes, ejercicio 2](#ejercicio-2)
 
-[Volumenes, ejercicio 3](#Ejercicio-3)
+[Volumenes, ejercicio 3](#ejercicio-3)
 
-[Volumenes, ejercicio 9](#Ejercicio-9)
+[Volumenes, ejercicio 9](#ejercicio-9)
 
 # Registry
 
