@@ -10,3 +10,4 @@
  * [Actividad 1](docker/actividad-01.md) **CORREGIDO**
  * [Actividad 2](docker/actividad-02.md)
  * [Actividad 3](docker/actividad-03.md)
+ * [Actividad 4](docker/actividad-04.md)
