@@ -376,3 +376,39 @@ docker inspect 64f84389ce08 --format '{{json .State}}'|jq
 </pre>
 
 Y salio con exit(1), pero no pude lograr que lo mate el OOMKiller
+
+Ahora!! Probe limitando la memoria del docker a 100m
+
+<pre>
+vagrant@vagrant:~/docker-killer$ docker run --memory 100m progrium/stress -c 1 --vm 1 --vm-bytes 200m -t 60M ­­timeout 120s
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+stress: FAIL: [1] (416) <-- worker 7 got signal 9
+stress: WARN: [1] (418) now reaping child worker processes
+stress: info: [1] dispatching hogs: 1 cpu, 0 io, 1 vm, 0 hdd
+stress: dbug: [1] using backoff sleep of 6000us
+stress: dbug: [1] setting timeout to 60s
+stress: dbug: [1] --> hogcpu worker 1 [6] forked
+stress: dbug: [1] --> hogvm worker 1 [7] forked
+stress: dbug: [1] <-- worker 6 reaped
+stress: FAIL: [1] (452) failed run completed in 0s
+</pre>
+
+Y ahora si!
+
+<pre>
+vagrant@vagrant:~/docker-killer$ docker inspect 744827ba23fa --format '{{json .State}}'|jq
+{
+  "Status": "exited",
+  "Running": false,
+  "Paused": false,
+  "Restarting": false,
+  <b>"OOMKilled": true,</b>
+  "Dead": false,
+  "Pid": 0,
+  "ExitCode": 1,
+  "Error": "",
+  "StartedAt": "2020-11-10T15:16:53.305221449Z",
+  "FinishedAt": "2020-11-10T15:16:53.373262652Z"
+}
+
+Ahi se ve que lo mato el OOMKiller
