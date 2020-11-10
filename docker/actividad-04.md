@@ -412,3 +412,5 @@ vagrant@vagrant:~/docker-killer$ docker inspect 744827ba23fa --format '{{json .S
 }
 
 Ahi se ve que lo mato el OOMKiller
+
+PD: Encontre una utilidad llamada "ctop" que hace algo parecido a "docker stats $(docker ps -ql)" pero mas visual. Nada, un decorado
