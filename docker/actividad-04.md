@@ -380,7 +380,7 @@ Y salio con exit(1), pero no pude lograr que lo mate el OOMKiller
 Ahora!! Probe limitando la memoria del docker a 100m
 
 <pre>
-vagrant@vagrant:~/docker-killer$ docker run --memory 100m progrium/stress -c 1 --vm 1 --vm-bytes 200m -t 60M ­­timeout 120s
+vagrant@vagrant:~/docker-killer$ docker run --memory 100m progrium/stress -c 1 --vm 1 --vm-bytes 200m -t 60M
 WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
 stress: FAIL: [1] (416) <-- worker 7 got signal 9
 stress: WARN: [1] (418) now reaping child worker processes
